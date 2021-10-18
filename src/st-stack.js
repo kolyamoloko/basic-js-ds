@@ -12,19 +12,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  * stack.pop(); // undefined
  *
  */
- module.exports = class Stack {
-   stack = [];
-  push(element) {
-    this.element = element;
-    return this.stack.push(element);
+module.exports = class Stack {
+constructor (stack = []) {
+  this.stack = stack;
+}
+push(elem) {
+  return this.stack.push(elem);
+}
 
-  }
+pop() {
+  return this.stack.pop();
+}
 
-  pop() {
-    return this.stack.pop();
-  }
-
-  peek() {
-    return this.stack[this.stack.length - 1];
-  }
+peek() {
+  return this.stack[this.stack.length - 1];
+}
 }
